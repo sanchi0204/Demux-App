@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Demux Academy</string>
+    <string name="tag">Add.Commit.Push</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="required">Required</string>
+    <string name="sign_in">Sign In</string>
+    <string name="log_in_admin">Sign In as Admin</string>
+    <string name="search">Search</string>
+    <string name="trending">Trending</string>
+    <string name="full_time">Full Time</string>
+    <string name="internship">Internship</string>
+    <string name="online_interview">Online Interview</string>
+    <string name="personal_interview">Personal Interview</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="difficulty">Difficulty</string>
+    <string name="topics">Topics</string>
+    <string name="array">Arrays</string>
+    <string name="hashTable">Hash Table</string>
+    <string name="binary_search">Binary Search</string>
+    <string name="dc">Divide and Conquer</string>
+    <string name="linkedList">Linked List</string>
+    <string name="string">String</string>
+    <string name="clg">College</string>
+    <string name="company">Company</string>
+    <string name="tags">Tags</string>
+    <string name="frequency">Frequency</string>
+</resources>

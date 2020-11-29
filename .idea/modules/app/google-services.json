@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "892994921390",
+    "firebase_url": "https://demux-academy-e34d1.firebaseio.com",
+    "project_id": "demux-academy-e34d1",
+    "storage_bucket": "demux-academy-e34d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892994921390:android:79b759a8077c2af95c9e3f",
+        "android_client_info": {
+          "package_name": "com.example.demuxacademy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892994921390-eko9o7h8mtf4l096qnlsnph7tgk8d6jo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.demuxacademy",
+            "certificate_hash": "2cde143e4cf881055daecc29500b6e13de470788"
+          }
+        },
+        {
+          "client_id": "892994921390-ma57bntuv7nm6oji66mkgis1rn036npj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQqLdnrv16baVSQTYf98xZlRnWP3_u-_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892994921390-ma57bntuv7nm6oji66mkgis1rn036npj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892994921390:android:29150e129c3d6b955c9e3f",
+        "android_client_info": {
+          "package_name": "com.example.demuxapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892994921390-ugdg1ef6gc6hbr6ov9ioovv2dun8nl9u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.demuxapp",
+            "certificate_hash": "2cde143e4cf881055daecc29500b6e13de470788"
+          }
+        },
+        {
+          "client_id": "892994921390-ma57bntuv7nm6oji66mkgis1rn036npj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQqLdnrv16baVSQTYf98xZlRnWP3_u-_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892994921390-ma57bntuv7nm6oji66mkgis1rn036npj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

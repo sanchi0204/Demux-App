@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#031539</color>
+    <color name="colorAccent">#03BADA</color>
+    <color name="colorWhite">#FFF</color>
+    <color name="chipColor">#99D0E8FB</color>
+    <color name="green">#2DD134</color>
+    <color name="red">#C31919</color>
+    <color name="yellow">#FB8C00</color>
+    <color name="colorBlack">#000</color>
+
+</resources>
