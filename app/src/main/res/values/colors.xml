@@ -5,6 +5,9 @@
     <color name="colorAccent">#03BADA</color>
     <color name="colorWhite">#FFF</color>
     <color name="chipColor">#99D0E8FB</color>
+    <color name="chipColorGreen">#9FEAA2</color>
+    <color name="chipColorpink">#F4B0E5</color>
+    <color name="chipColorpurple">#C499ED</color>
     <color name="green">#2DD134</color>
     <color name="red">#C31919</color>
     <color name="yellow">#FB8C00</color>
