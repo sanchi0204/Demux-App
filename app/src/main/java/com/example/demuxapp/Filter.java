@@ -17,6 +17,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.chip.Chip;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,12 +26,13 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Filter extends AppCompatActivity {
 
     private Spinner spinnerDifficulty, spinnerCompany, spinnerCollege, spinnerTopic;
-    private  String difficultyItem, companyItem, collegeItem, topicItem;
     private  String cmpItem, diffItem, clgItem, topItem;
+    private Chip trending, fullTime, internship, online, personal;
 
 
     DatabaseReference reference;
@@ -45,11 +47,12 @@ public class Filter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter);
 
+        InitiateChips();
         InitiateSpinners();
-        difficultyItem = PopulateDifficulty();
-        topicItem = PopulateTopics();
-       collegeItem =  PopulateCollege();
-        companyItem = PopulateCompany();
+       PopulateDifficulty();
+         PopulateTopics();
+       PopulateCollege();
+      PopulateCompany();
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view_ques);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -76,7 +79,16 @@ public class Filter extends AppCompatActivity {
 
     }
 
-    private String PopulateCompany() {
+    private void InitiateChips() {
+
+        trending = findViewById(R.id.chip_trending);
+        fullTime = findViewById(R.id.chip_full_time);
+        internship = findViewById(R.id.chip_internship);
+        online = findViewById(R.id.chip_online_interview);
+        personal = findViewById(R.id.chip_personal_interview);
+    }
+
+    private void PopulateCompany() {
 
 
         List<String> company = new ArrayList<>();
@@ -97,6 +109,7 @@ public class Filter extends AppCompatActivity {
 
                 if (!(adapterView.getItemAtPosition(i).equals(getString(R.string.company)))) {
                      cmpItem = adapterView.getItemAtPosition(i).toString();
+                    adapter.getFilter().filter(cmpItem);
                 }
             }
 
@@ -106,10 +119,9 @@ public class Filter extends AppCompatActivity {
             }
         });
 
-        return cmpItem;
     }
 
-    private String PopulateCollege() {
+    private void PopulateCollege() {
 
         List<String> clg = new ArrayList<>();
         clg.add(0, getString(R.string.clg));
@@ -132,6 +144,7 @@ public class Filter extends AppCompatActivity {
 
                 if (!(adapterView.getItemAtPosition(i).equals(getString(R.string.clg)))) {
                      clgItem = adapterView.getItemAtPosition(i).toString();
+                    adapter.getFilter().filter(clgItem);
                 }
             }
 
@@ -141,7 +154,7 @@ public class Filter extends AppCompatActivity {
             }
         });
 
-        return clgItem;
+
     }
 
     private void InitiateSpinners() {
@@ -152,7 +165,7 @@ public class Filter extends AppCompatActivity {
         spinnerTopic = findViewById(R.id.spinner_topic);
     }
 
-    private String PopulateTopics() {
+    private void PopulateTopics() {
 
         List<String> topics = new ArrayList<>();
         topics.add(0, getString(R.string.topics));
@@ -172,6 +185,7 @@ public class Filter extends AppCompatActivity {
 
                 if (!(adapterView.getItemAtPosition(i).equals(getString(R.string.topics)))) {
                     topItem = adapterView.getItemAtPosition(i).toString();
+                    adapter.getFilter().filter(topItem);
                 }
             }
 
@@ -181,10 +195,9 @@ public class Filter extends AppCompatActivity {
             }
         });
 
-        return topItem;
     }
 
-    private String PopulateDifficulty() {
+    private void PopulateDifficulty() {
 
         List<String> difficulty = new ArrayList<>();
         difficulty.add(0, getString(R.string.difficulty));
@@ -203,6 +216,7 @@ public class Filter extends AppCompatActivity {
 
                 if (!(adapterView.getItemAtPosition(i).equals(getString(R.string.difficulty)))) {
                     diffItem = adapterView.getItemAtPosition(i).toString();
+                    adapter.getFilter().filter(diffItem);
                 }
             }
 
@@ -211,7 +225,7 @@ public class Filter extends AppCompatActivity {
 
             }
         });
-return diffItem;
+
     }
 
     @Override
@@ -236,4 +250,6 @@ return diffItem;
         });
         return true;
     }
+
+
 }

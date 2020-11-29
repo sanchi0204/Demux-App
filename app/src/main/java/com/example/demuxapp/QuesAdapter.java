@@ -19,6 +19,7 @@ import com.google.android.material.chip.Chip;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
 
 public class QuesAdapter extends RecyclerView.Adapter<QuesAdapter.QuesViewHolder>  implements Filterable {
 
@@ -205,6 +206,7 @@ public class QuesAdapter extends RecyclerView.Adapter<QuesAdapter.QuesViewHolder
         return quesFilter;
     }
 
+
     private Filter quesFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
@@ -215,7 +217,11 @@ public class QuesAdapter extends RecyclerView.Adapter<QuesAdapter.QuesViewHolder
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (Question item : questionsFull) {
-                    if (item.getTitle().toLowerCase().contains(filterPattern))
+                    if (item.getTitle().toLowerCase().contains(filterPattern) ||
+                    item.getDifficulty().toLowerCase().contains(filterPattern) ||
+                    item.getCollege().contains(filterPattern) ||
+                    item.getTopics().contains(filterPattern) ||
+                    item.getCompanies().contains(filterPattern))
                     {
                         filteredList.add(item);
                     }
@@ -234,4 +240,7 @@ public class QuesAdapter extends RecyclerView.Adapter<QuesAdapter.QuesViewHolder
             notifyDataSetChanged();
         }
     };
+
+
+
 }
