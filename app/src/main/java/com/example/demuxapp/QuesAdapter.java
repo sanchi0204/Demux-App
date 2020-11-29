@@ -217,11 +217,29 @@ public class QuesAdapter extends RecyclerView.Adapter<QuesAdapter.QuesViewHolder
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (Question item : questionsFull) {
+
+                    if(filterPattern.toLowerCase().contains("trending"))
+                        item.setTrending(true);
+
+                    if(filterPattern.toLowerCase().contains("online interview"))
+                        item.setOnline_Interview(true);
+
+                    if(filterPattern.toLowerCase().contains("personal interview"))
+                        item.setPersonal_Interview(true);
+
+                    if(filterPattern.toLowerCase().contains("internship"))
+                        item.setInternship(true);
+
+                    if(filterPattern.toLowerCase().contains("full time"))
+                        item.setFull_Time(true);
+
                     if (item.getTitle().toLowerCase().contains(filterPattern) ||
                     item.getDifficulty().toLowerCase().contains(filterPattern) ||
                     item.getCollege().toString().toLowerCase().contains(filterPattern) ||
                     item.getTopics().toString().toLowerCase().contains(filterPattern) ||
-                    item.getCompanies().toString().toLowerCase().contains(filterPattern))
+                    item.getCompanies().toString().toLowerCase().contains(filterPattern)||
+                    item.isFull_Time() || item.isInternship() || item.isOnline_Interview() ||
+                    item.isPersonal_Interview() || item.isTrending())
                     {
                         filteredList.add(item);
                     }

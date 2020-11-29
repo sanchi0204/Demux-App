@@ -26,21 +26,20 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class Filter extends AppCompatActivity {
 
     private Spinner spinnerDifficulty, spinnerCompany, spinnerCollege, spinnerTopic;
     private  String cmpItem, diffItem, clgItem, topItem;
     private Chip trending, fullTime, internship, online, personal;
-    private String chip_result;
+     //String chip_result = " ";
 
 
     DatabaseReference reference;
     RecyclerView recyclerView;
     ArrayList<Question> list;
     QuesAdapter adapter;
-    SearchView searchView;
+   // SearchView searchView;
 
 
     @Override
@@ -48,7 +47,28 @@ public class Filter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter);
 
-        InitiateChips();
+//        trending = findViewById(R.id.chip_trending);
+//        if (trending.isChecked())
+//            chip_result.concat(trending.getText().toString());
+//
+//        fullTime = findViewById(R.id.chip_full_time);
+//        if(fullTime.isChecked())
+//            chip_result.concat(fullTime.getText().toString());
+//
+//        internship = findViewById(R.id.chip_internship);
+//        if(internship.isChecked())
+//            chip_result.concat(internship.getText().toString());
+//
+//        online = findViewById(R.id.chip_online_interview);
+//        if(online.isChecked())
+//            chip_result.concat(online.getText().toString());
+//
+//        personal = findViewById(R.id.chip_personal_interview);
+//        if (personal.isChecked())
+//            chip_result.concat(personal.getText().toString());
+//
+//        adapter.getFilter().filter(chip_result);
+
         InitiateSpinners();
        PopulateDifficulty();
          PopulateTopics();
@@ -80,15 +100,29 @@ public class Filter extends AppCompatActivity {
 
     }
 
-    private void InitiateChips() {
-
-        trending = findViewById(R.id.chip_trending);
-        fullTime = findViewById(R.id.chip_full_time);
-        internship = findViewById(R.id.chip_internship);
-        online = findViewById(R.id.chip_online_interview);
-        personal = findViewById(R.id.chip_personal_interview);
-
-    }
+//    private void InitiateChips() {
+//
+//        trending = findViewById(R.id.chip_trending);
+//        if (trending.isChecked())
+//            chip_result.concat(trending.getText().toString());
+//
+//        fullTime = findViewById(R.id.chip_full_time);
+//        if(fullTime.isChecked())
+//            chip_result.concat(fullTime.getText().toString());
+//
+//        internship = findViewById(R.id.chip_internship);
+//        if(internship.isChecked())
+//            chip_result.concat(internship.getText().toString());
+//
+//        online = findViewById(R.id.chip_online_interview);
+//        if(online.isChecked())
+//            chip_result.concat(online.getText().toString());
+//
+//        personal = findViewById(R.id.chip_personal_interview);
+//        if (personal.isChecked())
+//            chip_result.concat(personal.getText().toString());
+//
+//    }
 
     private void PopulateCompany() {
 
