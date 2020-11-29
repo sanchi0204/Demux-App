@@ -19,6 +19,10 @@
 ## Video Demo
 https://youtu.be/EvoXm3-k03E
 
+## APK File Link
+
+https://drive.google.com/file/d/1v5oQb5d1fCfPoJ1aZw8OzJv_BhhjueVD/view?usp=sharing
+
 ## Database Structure
 
 <img src="https://github.com/sanchi0204/Demux-App/blob/master/Screenshots/db.PNG" width=270 height=480>
