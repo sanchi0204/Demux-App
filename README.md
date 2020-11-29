@@ -15,6 +15,10 @@
 * User can find ques by choosing a particular company, college, topic or difficulty.
 * The app follows Material Design guidelines.
 
+
+## Video Demo
+https://youtu.be/EvoXm3-k03E
+
 ## Database Structure
 
 <img src="https://github.com/sanchi0204/Demux-App/blob/master/Screenshots/db.PNG" width=270 height=480>
@@ -29,6 +33,4 @@
   </tr>
  </table>
 
-## Video Demo
-https://youtu.be/EvoXm3-k03E
 
