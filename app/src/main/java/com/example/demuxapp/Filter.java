@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,43 +34,20 @@ public class Filter extends AppCompatActivity {
     private Spinner spinnerDifficulty, spinnerCompany, spinnerCollege, spinnerTopic;
     private  String cmpItem, diffItem, clgItem, topItem;
     private Chip trending, fullTime, internship, online, personal;
-     //String chip_result = " ";
+    private String chip_data;
 
 
     DatabaseReference reference;
     RecyclerView recyclerView;
     ArrayList<Question> list;
     QuesAdapter adapter;
-   // SearchView searchView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter);
 
-//        trending = findViewById(R.id.chip_trending);
-//        if (trending.isChecked())
-//            chip_result.concat(trending.getText().toString());
-//
-//        fullTime = findViewById(R.id.chip_full_time);
-//        if(fullTime.isChecked())
-//            chip_result.concat(fullTime.getText().toString());
-//
-//        internship = findViewById(R.id.chip_internship);
-//        if(internship.isChecked())
-//            chip_result.concat(internship.getText().toString());
-//
-//        online = findViewById(R.id.chip_online_interview);
-//        if(online.isChecked())
-//            chip_result.concat(online.getText().toString());
-//
-//        personal = findViewById(R.id.chip_personal_interview);
-//        if (personal.isChecked())
-//            chip_result.concat(personal.getText().toString());
-//
-//        adapter.getFilter().filter(chip_result);
-
+        InitiateChips();
         InitiateSpinners();
        PopulateDifficulty();
          PopulateTopics();
@@ -100,29 +79,40 @@ public class Filter extends AppCompatActivity {
 
     }
 
-//    private void InitiateChips() {
-//
-//        trending = findViewById(R.id.chip_trending);
-//        if (trending.isChecked())
-//            chip_result.concat(trending.getText().toString());
-//
-//        fullTime = findViewById(R.id.chip_full_time);
-//        if(fullTime.isChecked())
-//            chip_result.concat(fullTime.getText().toString());
-//
-//        internship = findViewById(R.id.chip_internship);
-//        if(internship.isChecked())
-//            chip_result.concat(internship.getText().toString());
-//
-//        online = findViewById(R.id.chip_online_interview);
-//        if(online.isChecked())
-//            chip_result.concat(online.getText().toString());
-//
-//        personal = findViewById(R.id.chip_personal_interview);
-//        if (personal.isChecked())
-//            chip_result.concat(personal.getText().toString());
-//
-//    }
+    private void InitiateChips() {
+
+        trending = findViewById(R.id.chip_trending);
+        fullTime = findViewById(R.id.chip_full_time);
+        internship = findViewById(R.id.chip_internship);
+        online = findViewById(R.id.chip_online_interview);
+        personal = findViewById(R.id.chip_personal_interview);
+
+
+        CompoundButton.OnCheckedChangeListener checkedChangeListener = new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                if (b)
+                {
+                    chip_data = compoundButton.getText().toString().toLowerCase();
+                    adapter.getFilter().filter(chip_data);
+                }
+
+//                else
+//                {
+//                    chip_data = compoundButton.getText().toString();
+//                }
+            }
+        };
+
+        trending.setOnCheckedChangeListener(checkedChangeListener);
+        fullTime.setOnCheckedChangeListener(checkedChangeListener);
+        internship.setOnCheckedChangeListener(checkedChangeListener);
+        online.setOnCheckedChangeListener(checkedChangeListener);
+        personal.setOnCheckedChangeListener(checkedChangeListener);
+
+
+    }
 
     private void PopulateCompany() {
 

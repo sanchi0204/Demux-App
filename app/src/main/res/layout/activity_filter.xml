@@ -111,7 +111,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/recycler_view_ques"
         android:layout_marginTop="10dp"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"/>
+       />
 
 </LinearLayout>

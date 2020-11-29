@@ -19,7 +19,6 @@ import com.google.android.material.chip.Chip;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Locale;
 
 public class QuesAdapter extends RecyclerView.Adapter<QuesAdapter.QuesViewHolder>  implements Filterable {
 
@@ -211,14 +210,40 @@ public class QuesAdapter extends RecyclerView.Adapter<QuesAdapter.QuesViewHolder
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
 
+
             List<Question> filteredList = new ArrayList<>();
             if (constraint == null || constraint.length() == 0) {
                 filteredList.addAll(questionsFull);
-            } else {
+            }
+            else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (Question item : questionsFull) {
 
-//
+                    if(constraint.equals("trending")) {
+                        if (item.isTrending())
+                            filteredList.add(item);
+                    }
+                    if(constraint.equals("online interview")) {
+                        if (item.isOnline_Interview())
+                            filteredList.add(item);
+                    }
+
+                    if(constraint.equals("personal interview")) {
+                        if (item.isPersonal_Interview())
+                            filteredList.add(item);
+                    }
+
+                    if(constraint.equals("internship"))
+                    {
+                        if (item.isInternship())
+                            filteredList.add(item);
+                    }
+
+                    if(constraint.equals("full time"))
+                    {
+                        if (item.isFull_Time())
+                            filteredList.add(item);
+                    }
 
                     if (item.getTitle().toLowerCase().contains(filterPattern) ||
                     item.getDifficulty().toLowerCase().contains(filterPattern) ||
@@ -228,6 +253,8 @@ public class QuesAdapter extends RecyclerView.Adapter<QuesAdapter.QuesViewHolder
                     {
                         filteredList.add(item);
                     }
+
+
                 }
             }
             FilterResults results = new FilterResults();
