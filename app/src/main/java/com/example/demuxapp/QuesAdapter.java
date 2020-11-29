@@ -219,9 +219,9 @@ public class QuesAdapter extends RecyclerView.Adapter<QuesAdapter.QuesViewHolder
                 for (Question item : questionsFull) {
                     if (item.getTitle().toLowerCase().contains(filterPattern) ||
                     item.getDifficulty().toLowerCase().contains(filterPattern) ||
-                    item.getCollege().contains(filterPattern) ||
-                    item.getTopics().contains(filterPattern) ||
-                    item.getCompanies().contains(filterPattern))
+                    item.getCollege().toString().toLowerCase().contains(filterPattern) ||
+                    item.getTopics().toString().toLowerCase().contains(filterPattern) ||
+                    item.getCompanies().toString().toLowerCase().contains(filterPattern))
                     {
                         filteredList.add(item);
                     }

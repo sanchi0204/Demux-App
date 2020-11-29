@@ -33,6 +33,7 @@ public class Filter extends AppCompatActivity {
     private Spinner spinnerDifficulty, spinnerCompany, spinnerCollege, spinnerTopic;
     private  String cmpItem, diffItem, clgItem, topItem;
     private Chip trending, fullTime, internship, online, personal;
+    private String chip_result;
 
 
     DatabaseReference reference;
@@ -86,6 +87,7 @@ public class Filter extends AppCompatActivity {
         internship = findViewById(R.id.chip_internship);
         online = findViewById(R.id.chip_online_interview);
         personal = findViewById(R.id.chip_personal_interview);
+
     }
 
     private void PopulateCompany() {
