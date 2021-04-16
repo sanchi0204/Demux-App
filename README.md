@@ -19,9 +19,9 @@
 ## Video Demo
 https://youtu.be/EvoXm3-k03E
 
-## APK File Link
+<!--## APK File Link -->
 
-https://drive.google.com/file/d/1v5oQb5d1fCfPoJ1aZw8OzJv_BhhjueVD/view?usp=sharing
+<!--https://drive.google.com/file/d/1v5oQb5d1fCfPoJ1aZw8OzJv_BhhjueVD/view?usp=sharing-->
 
 ## Database Structure
 
